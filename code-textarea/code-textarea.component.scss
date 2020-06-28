@@ -7,7 +7,20 @@
     width: 80%;
     box-shadow: 1px 2px 4px rgb(209, 209, 209);
     padding: 1em;
+    width: inherit;
 }
-.blue{
-    color:blue;
+.keyword{
+    color:rgb(0, 0, 200);
+}
+.important{
+    font-weight: bold;
+}
+.base{
+    color: #9C6524
+}
+.operand{
+    color: #888888
+}
+.container{
+    color: black
 }

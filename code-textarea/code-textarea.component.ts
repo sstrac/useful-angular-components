@@ -28,10 +28,26 @@ export class CodeTextareaComponent implements OnInit{
   }
 
   sqlCodeStyle(word: string){
-    if(sqlKeywords.includes(word.toLowerCase())){
-      return { blue: true }
+    word = word.toUpperCase()
+    if(sqlImportantKeywords.includes(word)){
+      return { 'keyword': true, 'important': true}
+    }
+    else if (sqlKeywords.includes(word)){
+      return { 'keyword': true }
+    }
+    else if (sqlJoiners.includes(word)){
+      return { 'operand': true }
+    }
+    else if (sqlContainers.includes(word)){
+      return { 'container': true }
+    }
+    else{
+      return { 'base': true }
     }
   }
 }
 
-const sqlKeywords = [ "select", "from", "where", "and" ]
+const sqlImportantKeywords = [ "SELECT", "WHERE", "FROM", "AND", "IN" ]
+const sqlKeywords = ["TRIM"]
+const sqlJoiners = ["=", "|", "*", ","]
+const sqlContainers = ["(", ")"]
